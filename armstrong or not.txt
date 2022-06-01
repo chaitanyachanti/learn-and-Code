@@ -1,0 +1,30 @@
+#The below program is to check whether the number is Armstrong number or not
+
+def check_armstrong(number):
+    # Initializing Sum and Number of Digits
+    sum = 0
+    number_of_digits = 0
+
+    # Calculating Number of individual digits
+    temp = number
+    while temp > 0:
+        number_of_digits = number_of_digits + 1
+        temp = temp // 10
+
+    # Finding Armstrong Number
+    temp = number
+    for i in range(1, number_of_digits + 1):
+        digit = temp % 10
+        sum = sum + (digit ** number_of_digits)
+        temp //= 10
+    return sum
+
+# End of Function
+
+# User Input
+number = int(input("\nPlease Enter the Number to Check for Armstrong: "))
+
+if (number == check_armstrong(number)):
+    print("\n %d is Armstrong Number.\n" % number)
+else:
+    print("\n %d is Not a Armstrong Number.\n" % number)

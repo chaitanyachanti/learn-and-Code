@@ -1,0 +1,19 @@
+# The below program is to Roll the Dice
+import random
+def get_result(max_value):
+    result=random.randint(1, max_value)
+    return result
+
+
+def main():
+    max_value=6
+    play=True
+    while play:
+        roll=input("Ready to roll? Enter Q to Quit")
+        if roll.lower() !="q":
+            dice_result=get_result(max_value)
+            print("You have rolled a",dice_result)
+        else:
+            play=False
+
+main()
